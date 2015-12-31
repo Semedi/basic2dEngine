@@ -7,11 +7,13 @@
 class entity
 {
 	public:
-		
+		enum form {circle, rect, convex, shape};
+
 		entity();
 		virtual ~entity(bool animated)
 
 		virtual void Load(std::string filename);
+
 		virtual void Draw(sf::RenderWindow &window);
 		virtual void Update(float et);
 
