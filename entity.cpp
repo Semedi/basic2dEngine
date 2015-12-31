@@ -4,12 +4,10 @@
 entity::entity(bool animated)
 {
 	_filename="";
-	_animated = animated
+	_animated = animated;
 }
 
-entity::~entity()
-{
-}
+entity::~entity(){}
 
 void entity::Load(std::string filename)
 {
@@ -34,13 +32,13 @@ void entity::setP(float x, float y )
 		_sprite.setPosition(x,y);
 }
 
-sf::Vector2f entity::GetSprite()
+sf::Vector2f entity::getP() const 
 {
 	return _sprite.getPosition();
 }
 
 
-void sf::Sprite& getSprite()
+sf::Sprite& entity::GetSprite()
 {
 	return _sprite;
 }

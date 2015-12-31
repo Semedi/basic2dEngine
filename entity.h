@@ -9,8 +9,8 @@ class entity
 	public:
 		enum form {circle, rect, convex, shape};
 
-		entity();
-		virtual ~entity(bool animated)
+		entity(bool animated);
+		virtual ~entity();
 
 		virtual void Load(std::string filename);
 
@@ -21,9 +21,13 @@ class entity
 		virtual sf::Vector2f getP() const;
 
 	protected:
+			
 		sf::Sprite& GetSprite();
+		
+
 	
 	private:
+		
 		sf::Sprite _sprite;
 		sf::Texture _texture;
 		std::string _filename;

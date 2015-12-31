@@ -3,6 +3,9 @@
 
 #include "entity.h"
 
+
+
+
 class form:
 	public entity
 	{
@@ -12,8 +15,8 @@ class form:
 
 			void Load(sf::Color color);
 
-		private:
-			sf::shape _shape;
+	private:	
+			sf::Shape *_shape;
 
 	       		
 
