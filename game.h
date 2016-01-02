@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include "entityMap.h"
 
 
 
@@ -24,9 +25,11 @@ class game
 
 		static sf::RenderWindow _window;
 		static State _state;
+		static entityMap _entMap;
+		
 
 
-		static void Loop(sf::CircleShape shape);
+		static void Loop();
 
 
 

@@ -7,7 +7,7 @@
 class entity
 {
 	public:
-		enum form {circle, rect, convex, shape};
+		enum eform {circle, rect, convex};
 
 		entity(bool animated);
 		virtual ~entity();
@@ -20,6 +20,7 @@ class entity
 		virtual void setP(float x, float y);
 		virtual sf::Vector2f getP() const;
 
+		
 	protected:
 			
 		sf::Sprite& GetSprite();

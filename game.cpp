@@ -1,17 +1,23 @@
 #include "game.h"
+#include "form.h"
 
 sf::RenderWindow game::_window;
-game::State game::_state;
+game::State game::_state=playing;
+entityMap game::_entMap;
+
 
 void game::Start(void)
 {
 	_window.create(sf::VideoMode(game::WIDTH, game::HEIGHT), "test");
 
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+
+	form *circle = new form(100.f);
+	circle->Load(sf::Color::Green);
+
+	_entMap.Add("j1", circle);	
 
 	while(_state != game::end){
-		Loop(shape);
+		Loop();
 	
 	}
 
@@ -19,7 +25,7 @@ void game::Start(void)
 }
 
 
-void game::Loop(sf::CircleShape shape)
+void game::Loop()
 {
 	sf::Event event;
 	_window.pollEvent(event);
@@ -33,7 +39,10 @@ void game::Loop(sf::CircleShape shape)
 		case game::playing:
 		{
 			_window.clear();
-			_window.draw(shape);
+
+			_entMap.Update();
+			_entMap.Draw(_window);
+			
 			_window.display();
 
 			break;

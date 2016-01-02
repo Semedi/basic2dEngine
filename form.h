@@ -10,10 +10,14 @@ class form:
 	public entity
 	{
 		public:
-			form(entity::form shape);
+			form(float size);
+			form(sf::Vector2f &size);
 			~form();
 
 			void Load(sf::Color color);
+			void Draw(sf::RenderWindow &window);
+			void Update(float et);
+			
 
 	private:	
 			sf::Shape *_shape;
@@ -22,6 +26,7 @@ class form:
 
 	
 
+			
 
 
 
