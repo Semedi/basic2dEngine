@@ -4,6 +4,7 @@ Just a basic engine with SFML (drawing some stuffs in a window lol)
 
 dependencies:
   -g++
+  
   -SFML installed in your system.
   
   
